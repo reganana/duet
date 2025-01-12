@@ -1,0 +1,217 @@
+/* AttendeeLinkPage CSS start here */
+
+.AttendeeLinkContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .attendee_link_to_busy_level a {
+    display: inline;
+    text-decoration: none;
+    color:#0078d4;
+  }
+  
+  .attendee_link_to_busy_level a:hover {
+    text-decoration: underline;
+  }
+  
+  .attendee_hr{
+    border: none; /* Removes default border styles */
+    border-top: 1px solid #c2c1c1;
+  }
+  
+  .attendee_h3 {
+    font-weight: normal;
+  }
+  
+  .attendee_free_time{
+    display: inline-block; /* Make the element appear on the same line as other inline elements */
+    background-color: #12eb1955;
+    padding: 5px 5px; /* Padding inside the button */
+    margin: 0px 15px;
+    margin-left: 0px;/* Margin around the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text inside the button */
+  }
+  
+  #attendee_prefer{
+    background-color: rgb(111, 192, 111);
+  }
+  
+  .attendee_discription{
+    padding-bottom: 20px;
+  }
+  
+  .attendee_free{
+    background-color: #12eb1955;
+  }
+  
+  .attendee_prefered_free{
+    background-color: rgb(111, 192, 111);
+  }
+  
+  .attendee_a{
+    font-size: 18px;
+  }
+  
+  
+  .attendee_link_to_busy_level button {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .attendee_link_to_busy_level button:hover {
+    background-color: #005ea6;
+  }
+
+
+.att-link-availability-preferred {
+  background-color: rgb(111, 192, 111);
+}
+
+.att-link-availability-lesspreferred {
+  background-color:   #12eb1955;
+}
+
+
+  
+  @media only screen and (max-width: 700px) {
+    .attendee_h2{
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+    .attendee_h2, .attendee_a{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    .scrollable-table{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    .attendee_link_to_busy_level button {
+        padding: 8px 10px;
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    .month-title h1 {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+  
+    .attendee_free_time{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  }
+  
+  @media only screen and (max-width: 380px) {
+    .attendee_h2{
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+    .attendee_h3, .attendee_a{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    .scrollable-table{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+    .attendee_link_to_busy_level button {
+        padding: 5px 8px;
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    .month-title h1 {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+  
+    .attendee_free_time{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+        padding: 5px 5px; /* Padding inside the button */
+        margin: 0px 5px;
+        margin-left: 0px;/* Margin around the button */
+  
+    }
+  }
+  
+  /* TODO may require name change or deletion */
+  
+  /* @media screen and (max-width: 530px) {
+    .hide-on-mobile {
+        display: none;
+    }
+  
+    th.th-time, td:not(.hide-on-mobile) {
+        display: table-cell;
+        width: 50%;
+    }
+  } */
+  
+
+  @media (prefers-color-scheme: dark) {
+    .AttendeeLinkPage {
+      background-color: rgb(32, 33, 36);
+      color: #e0e0e0;
+    }
+  
+    .AttendeeLinkContainer,
+    .attendee_discription{
+      color: #e0e0e0;
+    }
+  
+    .attendee_link_to_busy_level a:hover {
+      color: #82d4f0;
+    }
+  
+    .attendee_hr {
+      border-top-color: #555; /* Darker border color */
+    }
+
+    .att-link-month-week{
+        background-color:  rgb(36, 36, 39);
+    }
+
+    .cal-month-title h1 {
+        color: #e0e0e0;
+    }
+
+    #cal-prev-week-day{
+        background-color: #e0e0e0;
+    }
+
+    #att-link-scheduleBody{
+        background-color: rgba(32, 33, 36, 0.82);
+        color:#e0e0e0;
+    }
+
+    .att-link-th-time {
+        color:#e0e0e0;
+    }
+    
+    #att-link-time-title {
+        background-color:#34577C;
+        color: #E0E0E0;
+    }
+    
+    td {
+        border: 1px solid #aaaaaa;
+    }
+
+    .att-link-day-column {
+        background-color: #2D3F5C;
+        border: 1px solid #aaaaaa;
+        color: #E0E0E0;
+    }
+
+    th .att-link-cal-date{
+        color: #E0E0E0;
+    }
+
+
+  }

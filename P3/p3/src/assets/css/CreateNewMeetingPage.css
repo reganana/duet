@@ -1,0 +1,218 @@
+/* createNewMeetingPage */
+
+/* html, body {
+  height: 100%;
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+} */
+
+.center{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+.NewMeetingMain{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
+  
+  .NewMeetingcontainer {
+    padding-top: 100px;
+    width: 600px;
+    margin: 10px;
+  }
+  
+  .new-meeting-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .new-meeting-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .new-meeting-form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .new-meeting-form-group a {
+    display: inline;
+    text-decoration: none;
+    color:#0078d4;
+  }
+  
+  .new-meeting-form-group a:hover {
+    text-decoration: underline;
+  }
+  
+  .new-meeting-form-group input[type="text"],
+  .new-meeting-form-group input[type="email"],
+  .new-meeting-form-group input[type="datetime-local"],
+  .new-meeting-form-group input[type="number"],
+  .new-meeting-form-group select,
+  .new-meeting-form-group textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .new-meeting-form-group textarea {
+    height: 70px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .new-meeting-form-group button {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  .new_meeting_choose_button {
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .new-meeting-form-group button:hover {
+    background-color: #005ea6;
+  }
+  
+  .new_meeting_header {
+    color: white;
+    line-height: 80px;
+    position: fixed;
+    top: 0; /* Fix the header to the top */
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #f8f8f8;
+    /* padding: 0 20px; */
+    z-index: 1000;
+    padding-left: 40px;
+  }
+  
+  .new_meeting_ul {
+    padding: 0;
+  }
+  
+  nav .new_meeting_ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  nav .new_meeting_li {
+    float: left;
+  }
+  
+  div.logout {
+    /* float: right; */
+    position: fixed;
+    right: 20px;
+  }
+  
+  div.logout a {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+  }
+  
+  .newMeetingContacts:hover {
+    color: #005ea6;
+  }
+
+  .NewMeetingError{
+    color: rgb(248, 76, 76);
+  }
+  
+  @media only screen and (max-width: 700px) {
+    h2{
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+    .new-meeting-form-group,
+    .new-meeting-form-group input[type="datetime-local"],
+    .choose_button{
+        font-size: clamp(0.8rem, 1.2vw, 1.5rem);
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    h2{
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+    .new-meeting-form-group,
+    .new-meeting-form-group input[type="datetime-local"],
+    .choose_button{
+        font-size: clamp(0.7rem, 1.2vw, 1.5rem);
+    }
+    .choose_button {
+        line-height: 25px;
+        margin-bottom: 15px;
+    }
+    .header {
+        padding-left: 20px;
+    }
+    nav a {
+        padding: 0 4px;
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+
+    .NewMeetingMain {
+      background-color: rgb(32, 33, 36);
+    }
+
+    .newMeetingContacts {
+      color: #4ea6e0;
+    }
+
+    .new-meeting-form-group input[type="text"],
+    .new-meeting-form-group input[type="email"],
+    .new-meeting-form-group input[type="datetime-local"],
+    .new-meeting-form-group input[type="number"],
+    .new-meeting-form-group select,
+    .new-meeting-form-group textarea{
+      background-color: #333;
+      color: #e0e0e0;
+      border-color: #555;
+    }
+
+    .new-meeting-form-group button {
+      background-color: #005ea6;
+    }
+
+    .new-meeting-form-group button:hover {
+      background-color: #003d73;
+    }
+    
+    .new-meeting-form-group a {
+      color: #4ea6e0;
+    }
+
+    .new-meeting-form-group a:hover {
+      color: #82d4f0;
+    }
+
+    .NewMeetingError {
+      color: #ff6b6b;
+    }
+
+    .meeting-form h2{
+      color: #e0e0e0;
+    }
+
+  }
+  

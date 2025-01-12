@@ -1,0 +1,14 @@
+{
+  "name": "p3",
+  "version": "1.0.0",
+  "description": "for csc309 p3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  }
+}
