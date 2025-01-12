@@ -1,0 +1,148 @@
+.ContactFree{
+    background-color: green;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 8px;
+    margin-right: 50px;
+
+    /* Typography */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+
+    /* Appearance */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Interactivity */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.ContactBusy:hover {
+    background-color: rgb(42, 135, 42);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ContactBusy{
+    background-color: lightgreen;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 8px;
+    margin-right: 300px;
+
+    /* Typography */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+
+    /* Appearance */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Interactivity */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.ContactFree:hover {
+    background-color: lightgreen;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.ContactBusylevel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+  
+#contact-submit-button {
+    background-color: #0078d4;
+    color: white;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 8px;
+
+    /* Typography */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+
+    /* Appearance */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Interactivity */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+  
+#contact-submit-button:hover {
+    background-color: #005ea6;
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    .contact-cal-month-week{
+        background-color:  rgb(36, 36, 39);
+    }
+
+    .contact-cal-month-title h1 {
+        color: #e0e0e0;
+    }
+
+    #contact-cal-prev-week-day{
+        background-color: #e0e0e0;
+    }
+    
+    .contact-cal-button {
+        background-color: #e0e0e0;
+    }
+    #contact-scheduleBody{
+        background-color: rgba(32, 33, 36, 0.82);
+        color:#e0e0e0;
+    }
+
+    .contact-cal-th-time {
+        color:#e0e0e0;
+    }
+    
+    #contact-cal-time-title {
+        background-color:#34577C;
+        color: #E0E0E0;
+    }
+    
+    td {
+        border: 1px solid #aaaaaa;
+    }
+
+    .contact-cal-day-column {
+        background-color: #2D3F5C;
+        border: 1px solid #aaaaaa;
+        color: #E0E0E0;
+    }
+
+    th .contact-cal-date{
+        color: #E0E0E0;
+    }
+
+  }

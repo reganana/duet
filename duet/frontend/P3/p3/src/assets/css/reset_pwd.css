@@ -1,0 +1,143 @@
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+} */
+
+.pwd-main {
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.reset-pwd-page {
+    background-color: white;
+}
+
+label {
+    float: left;
+}
+
+input[type=text]{
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.pwd-button {
+    background-color: #379ce0;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pwd-button:hover {
+    background-color: #1891e1;
+}
+
+.pwd-form-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: white;
+}
+
+.pwd-container {
+    margin-bottom: 16px;
+}
+
+div.pwd-login {
+    float: left;
+}
+
+div.pwd-login a {
+    text-decoration: none;
+    color: #0078d4;
+}
+
+div.pwd-login a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 800px) {
+    .reset-pwd-page {
+        background-color: rgb(233, 245, 250);
+    }
+
+    .pwd-form-container {
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+        box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+        border-style: ridge;
+        border-color: #ccc;
+        border-radius: 5px;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    .reset-pwd-page {
+        background-color: rgb(32, 33, 36);
+        color: #e0e0e0;
+    }
+
+    .pwd-form-container{
+        background-color: rgb(32, 33, 36);
+    }
+
+    .pwd-container input[type=text]{
+        background-color: #333;
+        color: #e0e0e0;
+        border: 1px solid #555;
+    }
+
+    .pwd-button {
+        background-color: #005ea6;
+        color: #e0e0e0;
+    }
+
+    .pwd-button:hover {
+        background-color: #003d73;
+    }
+
+    div.pwd-login a {
+        color: #4ea6e0;
+    }
+
+    div.pwd-login a:hover {
+        color: #82d4f0;
+    }
+
+    label {
+        color: #e0e0e0;
+    }
+
+    @media only screen and (min-width: 800px) {
+
+        input[type=text], .pwd-form-container {
+            background-color: #2A2A2A;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+    }
+}

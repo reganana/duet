@@ -1,0 +1,184 @@
+
+
+/* ScheduleMeetintPage starts here */
+
+.schedule_container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .schedule_link_to_busy_level a {
+    display: inline;
+    text-decoration: none;
+    color:#0078d4;
+  }
+  
+  .schedule_link_to_busy_level a:hover {
+    text-decoration: underline;
+  }
+  
+  .schedule_hr{
+    border: none; /* Removes default border styles */
+    border-top: 1px solid #c2c1c1;
+  }
+  
+  .schedule_h3 {
+    font-weight: normal;
+  }
+  
+  .schedule_free{
+    background-color: #12eb1955;
+    cursor: pointer;
+  }
+  
+  .schedule_free_time{
+    display: inline-block; /* Make the element appear on the same line as other inline elements */
+    background-color: #12eb1955;
+    padding: 5px 5px; /* Padding inside the button */
+    margin: 0px 15px;
+    margin-left: 0px;/* Margin around the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text inside the button */
+  }
+  
+  .schedule_discription{
+    padding-bottom: 20px;
+    display: inline;
+  }
+  
+  #schedule_prefer{
+    background-color: rgb(111, 192, 111);
+  }
+  
+  
+  .schedule_a{
+    font-size: 18px;
+  }
+  
+  
+  .schedule_link_to_busy_level button {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .schedule_link_to_busy_level button:hover {
+    background-color: #005ea6;
+  }
+
+  .selected-time-slot {
+    background-color: rgb(242, 123, 123);
+}
+  
+  
+  @media only screen and (max-width: 700px) {
+    .schedule_h2{
+        font-size: clamp(1.2rem, 1.7vw, 2rem);
+    }
+    .schedule_h3, .schedule_a{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    th, td {
+        padding: 3px;
+    }
+  
+    /* TODO may require name change */
+    .scrollable-table{
+        font-size: clamp(9px, 0.1vw, 1.5rem);
+    }
+  
+    .schedule_link_to_busy_level button {
+        padding: 8px 10px;
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    .month-title h1 {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+  
+    .schedule_free_time{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  }
+  
+  @media only screen and (max-width: 380px) {
+    .schedule_h2{
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+    .schedule_h3, .schedule_a{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    .schedule_free_time{
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+    
+    .scrollable-table{
+        font-size: clamp(7px, 1vw, 1.5rem);
+    }
+    .schedule_link_to_busy_level button {
+        padding: 5px 8px;
+        font-size: clamp(0.7rem, 1vw, 1.5rem);
+    }
+  
+    /* TODO may require name change */
+    th, td {
+        padding: 2px;
+    }
+  
+    /* TODO may require name change */
+    .month-title h1 {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .schedule_container {
+      /* background-color: #121212; */
+      background-color: rgb(32,33,36);
+      color: #e0e0e0;
+    }
+
+    .scheduleMeetingPage {
+      background-color: rgb(32,33,36);
+    }
+  
+    .schedule_container,
+    .schedule_link_to_busy_level a,
+    .schedule_discription,
+    .schedule_a {
+      color: #e0e0e0; 
+    }
+  
+    .schedule_link_to_busy_level a:hover {
+      color: #82d4f0;
+    }
+  
+    .schedule_hr {
+      border-top-color: #555;
+    }
+  
+    .schedule_link_to_busy_level button {
+      background-color: #005ea6;
+      color: #e0e0e0;
+    }
+  
+    .schedule_link_to_busy_level button:hover {
+      background-color: #003d73;
+    }
+  
+    
+  }
+  
+  
+  
+  
+  

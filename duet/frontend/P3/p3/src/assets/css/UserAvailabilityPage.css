@@ -1,0 +1,384 @@
+.cal-main {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    overflow: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h2 {
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+h3 {
+    font-size: clamp(0.8rem, 2.1vw, 1.2rem);
+
+}
+
+a, p, th, td, li, label {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+.busylevel {
+    width: 20vw;
+    min-width: 180px;
+    max-width: 250px;
+    padding: 20px;
+    color: black;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    overflow: hidden;
+    background-image: url('../images/sidebar_background_opacity.jpg');
+    background-size: cover; /* Cover the entire sidebar */
+    background-repeat: no-repeat; /* Don't repeat the image */
+    background-position: center; /* Shift the image 50px to the right and vertically center it */
+}
+
+.busylevel.hidden {
+    display: none;
+}
+
+.left-side-buttons {
+    position: absolute;
+    bottom: 20px;
+    width: 140px;
+}
+
+.left-side-buttons .free{
+    display: block;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: left;
+    border: 2px solid darkgreen;
+    background-color: green;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.left-side-buttons .busy{
+    display: block;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: left;
+    border: 2px solid darkgreen ;
+    background-color: lightgreen;
+    width: 100%;
+}
+
+.left-side-buttons .new-meeting {
+    margin-bottom: 10px;
+}
+
+.left-side-buttons .free:hover{
+    background-color: #006400;; 
+}
+
+.left-side-buttons .busy:hover {
+    background-color: #8FBC8F;
+}
+
+#cal-page-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.profile h2 {
+    margin: 10px 0 5px;
+}
+
+.profile p {
+    font-size: 14px;
+    color: black;
+}
+  
+#cal-content-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    overflow: auto;
+    position: relative;
+}
+
+.cal-main {
+    width: 100%;
+    flex-direction: row;
+    position: relative;
+    overflow: auto;
+}
+
+
+.cal-month-week {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+}
+
+#availability-table{
+    width: 100%;
+}
+
+.cal-month-title h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.cal-month-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.cal-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    border-style: ridge;
+    border-color: #ccc;
+}
+
+.cal-button:hover {
+    background-color: #ccc;
+}
+
+
+table {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 0;
+    /*z-index: -1;*/
+}
+th, td {
+    padding: 8px;
+    width: 12.5%;
+    text-align: center;
+    color: #333
+}
+
+td {
+    border: 1px solid #ccc;
+}
+
+th {
+    position: sticky;
+    top: 80px;
+    background-color: #9ccbea;
+    border: 1px solid #86bfe4;
+}
+#cal-time-title {
+    background-color: #86bfe4;
+}
+
+th .cal-date {
+    color: #474646;
+    padding-top: 2px;
+}
+
+.cal-meeting {
+    background-color: #BBE2EC;
+}
+
+.cal-today {
+    background-color: #a4dbff;
+    border: 1px solid #a4dbff;
+}
+
+.cal-th-time, .cal-day-column {
+    display: table-cell;
+}
+
+.cal-show {
+    display: table-cell;
+}
+
+.preferred {
+    background-color: green; /* or any color you prefer */
+}
+
+.lesspreferred {
+    background-color: lightgreen; /* or any color you prefer */
+}
+
+.none {
+    background-color: transparent; /* Or whatever your default cell color is */
+}
+
+.ua-footer{
+    width: 100vw;
+}
+
+#submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    
+}
+
+#submit-button button {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px; /* Slightly rounded corners for the button */
+    border: 2px none ; /* Adjust border thickness and color if needed */
+    background-color: #fff; /* Use a more visually appealing color */
+    cursor: pointer;
+    transition: background-color 0.3s; 
+    outline: none;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    border-style: ridge;
+}
+
+#submit-button button:hover {
+    background-color: #ccc;
+}
+
+
+/* Add responsive styles for smaller screens */
+@media screen and (max-width: 890px) {
+    .sidebar {
+        width: 20vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: white;
+        padding: 20px;
+        color: black;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    #cal-page-container {
+        flex-direction: column;
+    }
+
+    .scrollable-table {
+        width: 100%;
+    }
+
+    header, #cal-content-wrap, .cal-main {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile p {
+        font-size: 12px;
+        color: black;
+    }
+
+    nav a {
+        padding: 0 4px;
+    }
+
+    button {
+        padding: 2px 4px;
+        font-size: 12px;
+    }
+
+    #toggle-icon {
+        margin-left: 20px;
+        margin-right: 15px;
+    }
+
+    .cal-month-title h1 {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* Calendar starts here */
+    .cal-month-week{
+        background-color:  rgb(36, 36, 39);
+    }
+
+    .cal-month-title h1 {
+        color: #e0e0e0;
+    }
+
+    #cal-prev-week-day{
+        background-color: #e0e0e0;
+    }
+    
+    .cal-button {
+        background-color: #e0e0e0;
+    }
+
+    #scheduleBody{
+        background-color: rgba(32, 33, 36, 0.82);
+        color:#e0e0e0;
+    }
+
+    .cal-th-time {
+        color:#e0e0e0;
+    }
+    
+    #cal-time-title {
+        background-color:#34577C;
+        color: #E0E0E0;
+    }
+    
+    td {
+        border: 1px solid #aaaaaa;
+    }
+
+    .cal-day-column {
+        background-color: #2D3F5C;
+        border: 1px solid #aaaaaa;
+        color: #E0E0E0;
+    }
+
+    th .cal-date{
+        color: #E0E0E0;
+    }
+
+    .ua-footer{
+        background-color:#323232;
+        width: 100vw;
+    }
+
+    #submit-button button{
+        background-color: #e0e0e0;
+    }
+
+    #submit-button button:hover{
+        background-color: #ccc;
+    }
+
+}

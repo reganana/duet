@@ -1,0 +1,157 @@
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.login-page {
+    margin: 0; 
+    background-color: white;
+}
+ 
+.login-label {
+    float: left;
+}
+ 
+input[type=text], input[type=password] {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 4px;
+}
+ 
+.login-button {
+    background-color: #379ce0;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+ 
+.login-button:hover {
+    background-color: #1891e1;
+}
+ 
+.login-form-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: white;
+}
+
+.login-container {
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+div.psw {
+    float: right;
+}
+ 
+div.register {
+    float: left;
+}
+ 
+div.register a, div.psw a {
+    text-decoration: none;
+    color: #0078d4;
+}
+ 
+div.register a:hover, div.psw a:hover {
+    text-decoration: underline;
+}
+
+.login-password-container{
+    text-align:left;
+}
+
+.login-password-toggle-icon {
+    font-size: 12px;
+    color: #1891e1;
+    padding:0;
+}
+
+.login-checkbox-container{
+    margin-top: 10px;
+}
+ 
+@media only screen and (min-width: 800px) {
+    .login-page {
+        background-color: rgb(233, 245, 250);
+    }
+ 
+    .login-form-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 30px;
+        box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+        border-style: ridge;
+        border-color: #ccc;
+        border-radius: 5px;
+    }
+}
+ 
+@media only screen and (max-width: 300px) {
+    div.psw {
+        float: left;
+        padding-top: 5px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .login-page {
+        background-color: rgb(32, 33, 36);
+        color: #e0e0e0;
+    }
+
+    .login-form-container{
+        background-color: rgb(32, 33, 36);
+    }
+    
+    .login-container input[type=text], .login-container input[type=password]{
+        background-color: #333;
+        color: #e0e0e0;
+        border: 1px solid #555;
+    }
+
+    .login-button {
+        background-color: #005ea6;
+        color: #e0e0e0;
+    }
+
+    .login-button:hover {
+        background-color: #003d73;
+    }
+
+    div.register a, div.psw a {
+        color: #4ea6e0;
+    }
+
+    div.register a:hover, div.psw a:hover {
+        color: #82d4f0;
+    }
+
+    label {
+        color: #e0e0e0;
+    }
+
+    @media only screen and (min-width: 800px) {
+        input[type=text], .login-form-container {
+            background-color: #2A2A2A;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+    }
+}
