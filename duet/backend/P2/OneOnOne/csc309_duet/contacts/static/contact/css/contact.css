@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display:flex;
+    color: white;
+    line-height: 80px;
+    top: 0;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #f8f8f8;
+    /* padding: 0 20px; */
+    z-index: 1000;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: rgb(75, 75, 75);
+    text-align: center;
+    padding: 0 16px;
+    text-decoration: none;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: bold;
+}
+
+nav a.active {
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #4ea6e0;
+}
+
+.logout {
+    /* float: right; */
+    position: fixed;
+    right: 20px;
+}
+.logout a{
+    text-decoration:underline;
+    color: purple;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    position: relative;
+    /* display: block; */
+    z-index: 1000;
+        /* Ensure sidebar is above other content */
+}
+.sidebar::before{
+    content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    background-image: url('../../sidebar_background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    opacity: 0.7;
+    z-index: -1;
+}
+.sidebar.sidebar-hidden {
+    display: none;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+
+.icon-container img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+
+.icon-container img:hover {
+    opacity: 0.5;
+}
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#main-content {
+    display: flex;
+    flex-grow: 1;
+}
+#contact-details {
+    flex-grow: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container {
+    text-align: center;
+    padding:15%;
+}
+
+.img-container img {
+    max-width: 20%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contactList li {
+    padding: 10px;
+}
+
+#contactList a.active {
+    font-weight: bold;
+}
+
+.sidebar li:hover {
+    background-color: #4ea6e0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#contact-options {
+    display: flex;
+   
+    flex-direction: column;
+    flex-grow: 1;
+}
+#status-sidebar {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+
+}
+
+#status-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#status-sidebar li {
+    margin-bottom: 10px;
+    display: inline;
+    padding: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+#status-sidebar li:hover {
+    background-color: white;
+}
+#options-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+#contact-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+
+#meeting-options {
+    display: flex;
+    height: 60vh;
+    flex-grow: 1;
+}
+
+#meeting-list {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 10px;
+    border-right: 1px solid #ccc;
+}
+
+#meeting-list li {
+    margin-bottom: 10px;
+}
+
+#meeting-list a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 15px;
+  
+
+}
+#meeting-type a.active {
+    font-weight: bold;
+   
+}
+#meeting-type a:hover {
+    font-weight: bold;
+
+}
+#meeting-list a:hover {
+    background-color: #ddd;
+}
+#meeting-list a.active {
+    font-weight: bold;
+}
+#meeting-details {
+    padding-left: 20px;
+    flex-grow: 1;
+}
+
+
+.buttons-container{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+#meeting-button{
+    padding:10px;
+background-color: #4ea6e0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left:30px;
+}
+#meeting-button:hover {
+    background-color: #357bbf;
+}
+.suggested-time-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#suggested-time-button {
+    padding: 10px;
+    background-color: #4ea6e0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#suggested-time-button:hover {
+    background-color: #357bbf;
+}
+#toggle-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 10px;
+    display:flex;
+    margin-left:20px;
+    margin-right:10px;
+   
+}
+#toggle-icon:hover{
+    opacity: 0.5;
+}
+
+ .logout a {
+     font-size: clamp(0.7rem, 2vw, 1rem);
+
+ }
+
+@media only screen and (max-width: 640px) {
+  
+        .hide-meeting-list {
+             display: none;
+         }
+        .sidebar {
+            height: 80%;
+            width: 150px;
+            position: absolute;
+            padding: 20px;
+            background-color: white;
+            overflow: hidden;
+            z-index: 1000;
+            display: none;
+        }
+        .header {
+                    padding-left: 20px;
+                }
+        
+               
+               
+}
+@media screen and (max-width: 400px) {
+    nav a {
+        padding: 0 4px;
+    }
+    #toggle-icon {
+            margin-left: 10px;
+            margin-right: 5px;
+    
+    }
+    .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+           
+            margin-top:10px;
+    }
+    #meeting-button {
+        margin-left:0px;
+        margin-right: 10px;
+    }
+    #status-sidebar {
+        padding: 0px;
+    }
+    .suggested-time-buttons-container {
+        flex-direction: column;
+        margin-right: 10px;
+    }
+
+
+}
+@media screen and (max-width: 350px) {
+    #status-sidebar ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    #status-sidebar li {
+        padding: 0;
+    }
+}
