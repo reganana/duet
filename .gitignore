@@ -1,1 +1,22 @@
+# macOS
 .DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python / Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+db.sqlite3
+
+# Build outputs
+build/
+dist/
+coverage/
