@@ -1,5 +1,6 @@
 import { defineConfig, transformWithEsbuild } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   server: {
@@ -20,6 +21,7 @@ export default defineConfig({
       },
     },
     react({ include: /\.(jsx|js)$/ }),
+    tailwindcss(),
   ],
   optimizeDeps: {
     esbuildOptions: {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/css/RegisterPage.css';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function RegistrationForm() {
   const navigate = useNavigate();

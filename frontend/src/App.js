@@ -28,6 +28,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import CreateNewMeetingPage from './pages/CreateNewMeetingPage';
 import AttendeeLinkPage from './pages/AttendeeLinkPage';
 import ScheduleMeetingPage from './pages/ScheduleMeetingPage';
@@ -47,6 +48,7 @@ import ContactAvailabilityPage from './pages/ContactAvailabilityPage';
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       {/* Navigation Links */}
         {/* TODO: Add navigation/header here */}
@@ -71,6 +73,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    </HelmetProvider>
   );
 }
 

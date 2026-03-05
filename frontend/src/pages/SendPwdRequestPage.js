@@ -1,6 +1,6 @@
 // Import React and any other dependencies
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import '../assets/css/reset_pwd.css';
 
 
