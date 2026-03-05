@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import '../assets/css/reset_pwd.css';
-import { Helmet } from 'react-helmet-async';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import AuthShell from '../components/AuthShell';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -61,44 +60,57 @@ function ResetPwdPage() {
   };
 
   return (
-    <div>
-      <Helmet>
-        <body className="reset-pwd-page" />
-      </Helmet>
-      <main>
-        <div className="pwd-main">
-          <div className="pwd-form-container">
-            <h1>Reset Password</h1>
-            <form id="resetPasswordForm" onSubmit={handleSubmit}>
-              <div className="pwd-container">
-                <label htmlFor="new-pwd"><b>New Password</b></label>
-                <input
-                  type="password"
-                  id="new-pwd"
-                  name="new-pwd"
-                  required
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                />
-
-                <label htmlFor="confirm-pwd"><b>Confirm New Password</b></label>
-                <input
-                  type="password"
-                  id="confirm-pwd"
-                  name="confirm-pwd"
-                  required
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-
-                <button type="submit" id="send" className="pwd-button">Reset Password</button>
-              </div>
-            </form>
-            <div className="pwd-login">Go back to <a href="/login">login</a></div>
-          </div>
+    <AuthShell
+      title="Reset password"
+      subtitle="Use a strong password with at least 8 characters and one number."
+    >
+      <form id="resetPasswordForm" className="duet-form" onSubmit={handleSubmit}>
+        <div>
+          <label className="duet-label" htmlFor="new-pwd">
+            New password
+          </label>
+          <input
+            className="duet-input"
+            type="password"
+            id="new-pwd"
+            name="new-pwd"
+            required
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            autoComplete="new-password"
+          />
         </div>
-      </main>
-    </div>
+
+        <div>
+          <label className="duet-label" htmlFor="confirm-pwd">
+            Confirm new password
+          </label>
+          <input
+            className="duet-input"
+            type="password"
+            id="confirm-pwd"
+            name="confirm-pwd"
+            required
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            autoComplete="new-password"
+          />
+        </div>
+
+        <button type="submit" id="send" className="duet-button-primary">
+          Reset password
+        </button>
+      </form>
+
+      <footer className="duet-helper-links">
+        <p>
+          Go back to{' '}
+          <Link to="/Login" className="duet-link">
+            login
+          </Link>
+        </p>
+      </footer>
+    </AuthShell>
   );
 }
 

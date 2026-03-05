@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import '../assets/css/LoginPage.css';
-import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthShell from '../components/AuthShell';
 
 function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -54,60 +53,84 @@ function LoginPage() {
   };
 
   return (
-    <div>
-      <Helmet>
-        <body className="login-page" />
-      </Helmet>
-      <main className='login-main'>
-        <div className="login-form-container">
-          <h1>Welcome to Duet!</h1>
-          <h2>Login</h2>
+    <AuthShell
+      title="Welcome back"
+      subtitle="Sign in to coordinate meetings and keep your calendar clean."
+    >
+      <form className="duet-form" onSubmit={handleSubmit}>
+        <section aria-label="Account credentials" className="space-y-4">
+          <div>
+            <label className="duet-label" htmlFor="username">
+              Username
+            </label>
+            <input
+              className="duet-input"
+              id="username"
+              type="text"
+              name="username"
+              value={credentials.username}
+              onChange={handleChange}
+              autoComplete="username"
+              required
+            />
+          </div>
 
-          <form onSubmit={handleSubmit}>
-            <div className="login-container">
-              <label className='login-label' htmlFor="username"><b>Username</b></label>
-              <input 
-                type="text" 
-                name="username" 
-                value={credentials.username} 
-                onChange={handleChange} 
-                required 
+          <div>
+            <label className="duet-label" htmlFor="password">
+              Password
+            </label>
+            <div className="space-y-2">
+              <input
+                className="duet-input"
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                name="password"
+                value={credentials.password}
+                onChange={handleChange}
+                autoComplete="current-password"
+                required
               />
-
-          <label htmlFor="psw"><b>Password</b></label>
-            <div className="login-password-container">
-              <input 
-                type={showPassword ? "text" : "password"} 
-                name="password" 
-                value={credentials.password} 
-                onChange={handleChange} 
-                required 
-              />
-              <span className="login-password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? 'Hide Password' : 'Show Password'}
-              </span>
+              <button
+                type="button"
+                className="duet-inline-action"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? 'Hide password' : 'Show password'}
+              </button>
             </div>
+          </div>
+        </section>
 
-              <label>
-                <div className="login-checkbox-container">
-                  <input 
-                    type="checkbox" 
-                    name="remember" 
-                    checked={credentials.remember} 
-                    onChange={handleChange} 
-                  /> Remember me
-                </div>
-              </label>
+        <label className="flex items-center gap-2 text-sm text-slate-600">
+          <input
+            className="duet-checkbox"
+            type="checkbox"
+            name="remember"
+            checked={credentials.remember}
+            onChange={handleChange}
+          />
+          Remember me
+        </label>
 
-              <button className='login-button' type="submit">Login</button>
-            </div>
+        <button className="duet-button-primary" type="submit">
+          Login
+        </button>
+      </form>
 
-            <div className="register">New user? <a href="/register">Register</a></div>
-            <div className="psw">Forgot <a href="/ResetPwdRequest">password?</a></div>
-          </form>
-        </div>
-      </main>
-    </div>
+      <footer className="duet-helper-links">
+        <p>
+          New user?{' '}
+          <Link to="/Register" className="duet-link">
+            Register
+          </Link>
+        </p>
+        <p>
+          <Link to="/ResetPwdRequest" className="duet-link">
+            Forgot password?
+          </Link>
+        </p>
+      </footer>
+    </AuthShell>
   );
 }
 

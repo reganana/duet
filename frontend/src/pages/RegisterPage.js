@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import '../assets/css/RegisterPage.css';
-import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthShell from '../components/AuthShell';
 
 function RegistrationForm() {
   const navigate = useNavigate();
@@ -92,62 +91,137 @@ function RegistrationForm() {
 };
 
   return (
-    <div>
-      <Helmet>
-        <body className="register-page" />
-      </Helmet>
-      <main className='register-main'>
-        <div className="register-container">
-          <h1 className='register-h1'>Sign up for Duet</h1>
-
-          <form className="register-meeting-form" onSubmit={handleSubmit}>
-            <div className="register-form-group">
-              <label htmlFor="firstName">First name: </label>
-              <input type="text" id="firstName" name="first_name" value={formData.first_name} onChange={handleChange} />
-            </div>
-
-            <div className="register-form-group">
-              <label htmlFor="lastName">Last name: </label>
-              <input type="text" id="lastName" name="last_name" value={formData.last_name} onChange={handleChange} />
-            </div>
-
-            <div className="register-form-group">
-              <label htmlFor="userName">User Name: </label>
-              <input type="text" id="userName" name="username" value={formData.username} onChange={handleChange} />
-            </div>
-
-            <div className="register-form-group">
-              <label htmlFor="password">Password: </label>
-              <input type={showPassword ? "text" : "password"} id="password" name="password" value={formData.password} onChange={handleChange} />
-              <span className="register-password-toggle-icon" onClick={handleTogglePasswordVisibility}>
-                {showPassword ? 'Hide Password' : 'Show Password'}
-              </span>
-            </div>
-
-            <div className="register-form-group">
-              <label htmlFor="password2">Confirm Password: </label>
-              <input type={showConfirmPassword ? "text" : "password"} id="password2" name="password2" value={formData.password2} onChange={handleChange} />
-              <span className="register-password-toggle-icon" onClick={handleToggleConfirmPasswordVisibility}>
-                {showConfirmPassword ? 'Hide Password' : 'Show Password'}
-              </span>
-            </div>
-
-            <div className="register-form-group">
-              <label htmlFor="email">Email: </label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
-            </div>
-
-            <div className="register-form-group">
-              <button type="submit">Register</button>
-            </div>
-          </form>
-          <div className="inline-container">
-            <p>Already have an account?</p>
-            <a href="/login">Log in</a>
+    <AuthShell
+      title="Create your account"
+      subtitle="Set up your profile and start scheduling meetings in minutes."
+    >
+      <form className="duet-form" onSubmit={handleSubmit}>
+        <section aria-label="Profile details" className="duet-form-grid">
+          <div>
+            <label className="duet-label" htmlFor="firstName">
+              First name
+            </label>
+            <input
+              className="duet-input"
+              type="text"
+              id="firstName"
+              name="first_name"
+              value={formData.first_name}
+              onChange={handleChange}
+              autoComplete="given-name"
+            />
           </div>
+
+          <div>
+            <label className="duet-label" htmlFor="lastName">
+              Last name
+            </label>
+            <input
+              className="duet-input"
+              type="text"
+              id="lastName"
+              name="last_name"
+              value={formData.last_name}
+              onChange={handleChange}
+              autoComplete="family-name"
+            />
+          </div>
+        </section>
+
+        <div>
+          <label className="duet-label" htmlFor="userName">
+            Username
+          </label>
+          <input
+            className="duet-input"
+            type="text"
+            id="userName"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            autoComplete="username"
+          />
         </div>
-      </main>
-    </div>
+
+        <div>
+          <label className="duet-label" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="duet-input"
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete="email"
+          />
+        </div>
+
+        <section aria-label="Password setup" className="duet-form-grid">
+          <div>
+            <label className="duet-label" htmlFor="password">
+              Password
+            </label>
+            <div className="space-y-2">
+              <input
+                className="duet-input"
+                type={showPassword ? 'text' : 'password'}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                autoComplete="new-password"
+              />
+              <button
+                type="button"
+                className="duet-inline-action"
+                onClick={handleTogglePasswordVisibility}
+              >
+                {showPassword ? 'Hide password' : 'Show password'}
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label className="duet-label" htmlFor="password2">
+              Confirm password
+            </label>
+            <div className="space-y-2">
+              <input
+                className="duet-input"
+                type={showConfirmPassword ? 'text' : 'password'}
+                id="password2"
+                name="password2"
+                value={formData.password2}
+                onChange={handleChange}
+                autoComplete="new-password"
+              />
+              <button
+                type="button"
+                className="duet-inline-action"
+                onClick={handleToggleConfirmPasswordVisibility}
+              >
+                {showConfirmPassword ? 'Hide password' : 'Show password'}
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <button className="duet-button-primary" type="submit">
+          Register
+        </button>
+      </form>
+
+      <footer className="duet-helper-links">
+        <p>
+          Already have an account?{' '}
+          <Link to="/Login" className="duet-link">
+            Log in
+          </Link>
+        </p>
+      </footer>
+    </AuthShell>
   );
 }
 

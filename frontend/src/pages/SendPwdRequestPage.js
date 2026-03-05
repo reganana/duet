@@ -1,7 +1,7 @@
 // Import React and any other dependencies
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import '../assets/css/reset_pwd.css';
+import { Link } from 'react-router-dom';
+import AuthShell from '../components/AuthShell';
 
 
 function SendPwdRequestPage() {
@@ -34,38 +34,41 @@ function SendPwdRequestPage() {
   };
 
   return (
-    <div>
-      <Helmet>
-        <body className="reset-pwd-page" />
-      </Helmet>
-      <main>
-        <div className="pwd-main">
-          <div className="pwd-form-container">
-            <h1>Forgot Password?</h1>
-
-            <form id="pwd-sendRequestForm" onSubmit={handleSubmit}>
-
-              <div className="pwd-container">
-                <label htmlFor="username"><b>Username</b></label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  required
-                  value={username}
-                  onChange={handleInputChange}
-                />
-                    
-                <button type="submit" id="send" className="pwd-button">Send Request Link</button>
-              </div>
-
-              <div className="pwd-login">Go back to <a href="/login">login</a></div>
-            </form>
-          </div>
+    <AuthShell
+      title="Forgot password?"
+      subtitle="Enter your username and we'll send a reset link to your registered email."
+    >
+      <form id="pwd-sendRequestForm" className="duet-form" onSubmit={handleSubmit}>
+        <div>
+          <label className="duet-label" htmlFor="username">
+            Username
+          </label>
+          <input
+            className="duet-input"
+            type="text"
+            id="username"
+            name="username"
+            required
+            value={username}
+            onChange={handleInputChange}
+            autoComplete="username"
+          />
         </div>
-      </main>
-      
-    </div>
+
+        <button type="submit" id="send" className="duet-button-primary">
+          Send request link
+        </button>
+      </form>
+
+      <footer className="duet-helper-links">
+        <p>
+          Go back to{' '}
+          <Link to="/Login" className="duet-link">
+            login
+          </Link>
+        </p>
+      </footer>
+    </AuthShell>
   );
 }
 

@@ -24,9 +24,7 @@
 
 // export default App;
 
-
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import CreateNewMeetingPage from './pages/CreateNewMeetingPage';
@@ -78,4 +76,3 @@ function App() {
 }
 
 export default App;
-
